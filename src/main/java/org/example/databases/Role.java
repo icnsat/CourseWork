@@ -1,4 +1,4 @@
-package org.example;
+package org.example.databases;
 
 public enum Role {
     USER,

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.databases;
 
 
 import jakarta.persistence.*;

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+</head>
+<body>
+<header th:insert="~{blocks/header :: header}"></header>
+
+<div>
+    <h1>our shop :)</h1>
+    <div th:each="el : ${products}">
+        <h3 th:text="${el.name}"/>
+        <p th:text="${el.description}"/>
+        <p th:text="${el.price}"/>
+        <a th:href="'/buy/'+ ${el.id}"/>
+    </div>
+</div>
+
+<footer th:insert="~{blocks/footer :: footer}"></footer>
+
+</body>
+</html>

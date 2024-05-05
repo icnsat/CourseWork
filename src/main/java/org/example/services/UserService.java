@@ -1,11 +1,13 @@
-package org.example;
+package org.example.services;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.example.repositories.UserRepository;
+import org.example.databases.Role;
+import org.example.databases.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 
 import java.util.Collections;
 import java.util.List;
@@ -25,12 +27,12 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public String create(User user) {
+    public String create(User user ,  /*Map<String, Object>*/ Model model) {
         User userFromDb = userRepository.findByUsername(user.getUsername());
         log.info("Testing existence of {}", userFromDb);
         if (userFromDb != null) {
             log.info("User already exists");
-            //model.put("message", "User exists!");
+            model.addAttribute("userexists", "User exists!"); //put("message", "User exists!");
             return "registration";
         }
         log.info("User doesn't exist");
