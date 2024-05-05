@@ -65,4 +65,8 @@ public class UserService {
         return true;
     }
 
+    public User findByUsername(String username) {
+        log.info("Read user with name = {}", username);
+        return userRepository.findByUsername(username);
+    }
 }

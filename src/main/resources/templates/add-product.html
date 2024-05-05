@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Add product</title>
+</head>
+<body>
+<header th:insert="~{blocks/header :: header}"></header>
+<div>
+    <h1>Добавление товара</h1>
+    <form th:action="@{/shop/add}" method="post">
+        <div><input type="text" name="name" placeholder="Название продукта"/></div>
+        <div><textarea name="description" placeholder="Описание" width="48" height="48"></textarea></div>
+        <div><input type="number" name="price" placeholder="Стоимость, ₽"/></div>
+
+        <!--<input type="hidden" name="_csrf" th:value="${_csrf.token}" />-->
+        <div><input type="submit" value="Добавить"/></div>
+    </form>
+</div>
+
+<footer th:insert="~{blocks/footer :: footer}"></footer>
+
+</body>
+</html>

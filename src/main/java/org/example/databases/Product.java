@@ -17,7 +17,16 @@ public class Product {
     private String description;
 
     @Column(name = "price")
-    private double price;
+    private int price;
+
+    public Product() {
+    }
+
+    public Product(String name, String description, int price) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+    }
 
     public Long getId() {
         return id;
@@ -43,11 +52,11 @@ public class Product {
         this.description = description;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 }
