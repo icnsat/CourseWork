@@ -1,6 +1,9 @@
-package org.example.databases;
+package org.example.entities;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CascadeType;
+
+
 
 @Entity
 @Table(name = "orderitems")
@@ -10,7 +13,7 @@ public class OrderItem {
     @Column(name = "id")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne//(cascade = CascadeType.SAVE_UPDATE)
     @JoinColumn(name = "order_id")
     private Order order;
 

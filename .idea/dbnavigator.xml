@@ -18,7 +18,12 @@
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="656bc466-0e8e-40ec-9fc5-553655573b88">
       <console name="cw" type="STANDARD" schema="coursework" session="Main"><![CDATA[select * from user
-select * from userrole]]></console>
+select * from userrole
+
+select * from products
+
+select * from orders
+select * from orderitems]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -29,6 +34,9 @@ select * from userrole]]></console>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="656bc466-0e8e-40ec-9fc5-553655573b88" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="656bc466-0e8e-40ec-9fc5-553655573b88" dataset="coursework.products" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />

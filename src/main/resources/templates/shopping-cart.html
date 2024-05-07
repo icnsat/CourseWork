@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href = "/static/css/shopping-cart.css" rel = "stylesheet" >
+    <link href = "/static/css/general.css" rel = "stylesheet" >
+</head>
+<body>
+<header th:insert="~{blocks/header :: header}"></header>
+
+<form id="myForm2" th:action="@{/shopping-cart-post}" th:object="${numberOfItems}" th:method="POST" style="display: none;">
+    <input id="inputItems" style="display: none;" readonly th:field="*{number}">
+</form>
+<main>
+    <section class = "cart">
+        <div class = "topBar">
+            <div><p>Товар</p></div>
+            <div><p>Количество</p></div>
+            <div><p>Цена за один товар</p></div>
+            <div><p>Общая стоимость</p></div>
+        </div>
+        <div class = "cartGoods">
+            <div id="cart-items"></div>
+        </div>
+    </section>
+    <form id = "myContacts" class = "contactsMenu" th:action = "@{/add-order}" th:method="POST" th:object="${order}">
+        <h2>Общая стоимость</h2>
+        <div>
+            <input id = "text2" th:field="*{totalCost}" readonly>
+            <p>₽</p>
+        </div>
+        <!--<h2>Оплата</h2>
+        <div class = "paymentChoose">
+            <label><input required type = "radio" name = "payment" th:field="*{paymentChoose}" th:value="карта">Оплата по карте</label>
+            <label><input required type = "radio" name = "payment" th:field="*{paymentChoose}" th:value="наличные">Оплата наличными</label>
+        </div>-->
+        <div th:each = "product, i: *{orderItems}">
+            <input th:id = "${'index' + __${i.index}__}" style="display: none;" th:field="*{orderItems[__${i.index}__].order.id}">
+            <input th:id = "${'index' + __${i.index}__}" style="display: none;" th:field="*{orderItems[__${i.index}__].product.id}">
+            <input th:id = "${'name' + __${i.index}__}" style="display:none;" th:field="*{orderItems[__${i.index}__].product.name}">
+            <input th:id = "${'quantity' + __${i.index}__}" style="display: none;" th:field="*{orderItems[__${i.index}__].quantity}">
+            <input th:id = "${'price' + __${i.index}__}" style="display: none;" th:field="*{orderItems[__${i.index}__].product.price}">
+        </div>
+        <button type="submit" class = "shineButton" onclick = "removeAll()">Оформить</button>
+    </form>
+</main>
+<script src="/js/order-products.js"></script>
+<script>
+    window.onload = function () {
+        fillCartItems();
+    };
+</script><!--getNumberOfItems();-->
+<footer th:insert="~{blocks/footer :: footer}"></footer>
+</body>
+</html>
+
+
+
+<!--<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href = "/static/css/shopping-cart.css" rel = "stylesheet" >
+    <link href = "/static/css/general.css" rel = "stylesheet" >
+</head>
+<body>
+<header th:insert="~{blocks/header :: header}"></header>
+
+
+
+<form id="myForm" th:action="@{/shopping-cart-post}" th:object="${numberOfItems}" th:method="POST" style="display: none;">
+    <input id="inputItems" style="display: none;" readonly th:field="*{number}">
+</form>
+<main>
+    <section class = "cart">
+        <div class = "topBar">
+            <div><p>Товар</p></div>
+            <div><p>Количество</p></div>
+            <div><p>Цена за один товар</p></div>
+            <div><p>Общая стоимость</p></div>
+        </div>
+        <div class = "cartGoods">
+            <div id="cart-items"></div>
+        </div>
+    </section>
+    <form id = "myContacts" class = "contactsMenu" th:action = "@{/add-order}" th:method="POST" th:object="${order}">
+        <h2>Общая стоимость</h2>
+        <div>
+            <input id = "text2" th:field="*{totalCost}" readonly>
+            <p>₽</p>
+        </div>
+        <h2>Оплата</h2>
+        <!-<div class = "paymentChoose">
+            <label><input required type = "radio" name = "payment" th:field="*{paymentChoose}" th:value="карта">Оплата по карте</label>
+            <label><input required type = "radio" name = "payment" th:field="*{paymentChoose}" th:value="наличные">Оплата наличными</label>
+        </div>->
+        <div th:each = "book, i: *{orderItems}">
+            <input th:id = "${'index' + __${i.index}__}" th:field="*{orderItems[__${i.index}__].book.id}" style="display: none;">
+            <input th:id = "${'name' + __${i.index}__}" th:field="*{orderItems[__${i.index}__].book.name}" style="display:none;">
+            <input th:id = "${'amount' + __${i.index}__}" th:field="*{orderItems[__${i.index}__].amount}" style="display: none;">
+            <input th:id = "${'bookPrice' + __${i.index}__}" th:field="*{orderItems[__${i.index}__].book.bookPrice}" style="display: none;">
+        </div>
+        <button type="submit" class = "shineButton" onclick = "removeAll()">Оформить</button>
+    </form>
+</main>
+<script src = "/js/order-products.js"></script>
+<script>
+    window.onload = function () {
+        getNumberOfItems();
+        fillCartItems();
+    };
+</script>
+
+
+
+<footer th:insert="~{blocks/footer :: footer}"></footer>
+
+</body>
+</html>-->

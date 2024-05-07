@@ -1,6 +1,8 @@
-package org.example.databases;
+package org.example.entities;
 
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "products")
@@ -18,6 +20,13 @@ public class Product {
 
     @Column(name = "price")
     private int price;
+
+
+    //
+    @OneToMany(mappedBy = "product")
+    private List<OrderItem> orderItem;
+    //
+
 
     public Product() {
     }
@@ -58,5 +67,13 @@ public class Product {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public List<OrderItem> getOrderItem() {
+        return orderItem;
+    }
+
+    public void setOrderItem(List<OrderItem> orderItem) {
+        this.orderItem = orderItem;
     }
 }

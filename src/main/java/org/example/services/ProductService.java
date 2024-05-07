@@ -1,6 +1,6 @@
 package org.example.services;
 
-import org.example.databases.Product;
+import org.example.entities.Product;
 import org.example.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

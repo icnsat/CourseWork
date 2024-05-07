@@ -1,8 +1,9 @@
-package org.example.databases;
+package org.example.entities;
 
 
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -25,6 +26,9 @@ public class User {
     @Column(name = "role")
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
+
+    @OneToMany
+    private List<Order> orders;
 
     public Long getId() {
         return id;

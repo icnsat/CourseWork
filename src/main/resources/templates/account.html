@@ -9,6 +9,53 @@
 
 your account :)
 
+
+<section class = "cart">
+    <h1>Все Заказы</h1>
+    <div class = "orders" th:each="order : ${orders}">
+        <div class = "simpleOrder">
+            <div class = "orderDescription">
+                <h2 th:text="${'Заказ от ' + order.getOrderDate()}" ></h2>
+                <p th:text = "${'Общая стоимость: ' + order.getTotalCost() + ' ₽'}"></p>
+                <p th:text = "${'Статус заказа: ' + order.getStatus()}"></p>
+            </div>
+
+            <div th:each="prod : ${order.getOrderItems()}">
+                <div class = "product">
+                    <img th:src="@{'/images/' + ${prod.getProduct().getId()} + '.jpg'}">
+                    <p th:text = "${prod.getProduct().getName()}"></p>
+                    <p th:text = "${'Цена: ' + prod.getProduct().getPrice()  + ' ₽'}"></p>
+                    <p th:text = "${'Количество: ' + prod.getQuantity()}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id = "myContacts" class = "contactsMenu" th:object="${user}">
+    <div class = "userHeader">
+        <p>Данные пользователя</p>
+    </div>
+    <div class = "textInput">
+        <p th:text = "${'Имя: ' + user.getUsername()}"></p>
+        <p th:text = "${'Почта: ' + user.getEmail()}"></p>
+    </div>
+    <form action="/logout" method="GET" style = "width: 150px">
+        <button class = "shineButton" type="submit">Выйти</button>
+    </form>
+</div>
+
+
+<script src = "/js/order-products.js"></script>
+
+<script>
+    window.onload = function () {
+        getNumberOfItems();
+        fillCartItems();
+    };
+</script>
+
+
 <footer th:insert="~{blocks/footer :: footer}"></footer>
 
 </body>
