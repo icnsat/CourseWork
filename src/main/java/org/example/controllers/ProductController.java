@@ -92,11 +92,13 @@ public class ProductController {
         order.setOrderDate(currentDate.format(formatter));
         order.setUser(customUserDetails.getUser());
         order.setStatus("оформлен");
+        orderService.create(order);
         for (OrderItem orderItem : order.getOrderItems()) {
+            orderItem.setOrder(order);
             orderItemService.saveOrderItem(orderItem);
         }
-        orderService.create(order);
-        return "redirect:account";
+        //orderService.create(order);
+        return "redirect:/account";
     }
 
     @GetMapping("/shopping-cart")

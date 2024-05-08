@@ -63,8 +63,10 @@ function fillCartItems() {
                 <p>${cart[ind].quantity * cart[ind].price} ₽</p>
                 <button class="remove-btn" onclick="removeItem(${ind})"><i class="fa fa-trash" aria-hidden="true"></i></button>
             </div>`;
-        let cartIndex = document.getElementById('index' + ind);
-        cartIndex.value = parseInt(cart[ind].id);
+        let cartIndex = document.getElementById('cartIndex' + ind);
+        cartIndex.value = 564; //parseInt(cart[ind].id);
+        let productIndex = document.getElementById('productIndex' + ind);
+        productIndex.value = parseInt(cart[ind].id);
         let cartName = document.getElementById('name' + ind);
         cartName.value = cart[ind].name;
         let cartQuantity = document.getElementById('quantity' + ind);
