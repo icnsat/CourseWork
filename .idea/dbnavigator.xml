@@ -30,7 +30,9 @@ select * from orderitems]]></console>
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="656bc466-0e8e-40ec-9fc5-553655573b88" object-ref="consoles/cw" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="656bc466-0e8e-40ec-9fc5-553655573b88" />

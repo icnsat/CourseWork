@@ -1,0 +1,46 @@
+.footer-container {
+    background-color: #333; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    padding: 20px; /* Внутренний отступ */
+    /*text-align: center;*/ /* Выравнивание текста по центру */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.footer-container h3{
+    text-align: center;
+}
+
+.footers-hrefs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footer-container a {
+    color: #fff; /* Цвет ссылок */
+    text-decoration: none; /* Убрать подчеркивание у ссылок */
+    /*margin-right: 20px; /* Внешний отступ справа */
+}
+
+.footer-container a:hover {
+    color: #a1a2dd; /* Подчеркивание при наведении на ссылки */
+}
+
+.footer-container .copyrightText {
+    margin-top: 20px; /* Внешний отступ сверху */
+    text-align: center;
+}
+/*
+
+.footer-container .copyrightText p{
+    text-align: center;
+}
+*/
+
+.footer-line{
+    height: 3px;
+    width: 100%;
+    background-color: #a1a2dd;
+}

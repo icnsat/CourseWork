@@ -1,0 +1,18 @@
+.header-container {
+    background-color: #333; /* черный цвет для фона */
+    color: #fff; /* белый цвет для текста */
+    padding: 10px 0; /* отступы сверху и снизу в 10px, слева и справа - 0 */
+    text-align: center; /* выравнивание текста по центру */
+    display: flex; /* использование flexbox */
+    justify-content: space-around; /* равномерное распределение элементов по ширине */
+}
+
+.header-container a {
+    color: #fff; /* белый цвет для ссылок */
+    text-decoration: none; /* убрать подчеркивание у ссылок */
+    margin: 0 10px; /* внешние отступы слева и справа у ссылок в 10px */
+}
+
+.header-container a:hover {
+    color: #a1a2dd; /* фиолетовый цвет для ссылок при наведении курсора */
+}

@@ -129,7 +129,7 @@ document.getElementById("myForm2").addEventListener("submit", function(event) {
 
 function submitFormOnCart() {
     getNumberOfItems();
-    var form = document.getElementById("myForm");
+    var form = document.getElementById("myForm2");
     form.submit();
     window.location.href = '/shopping-cart';
 }

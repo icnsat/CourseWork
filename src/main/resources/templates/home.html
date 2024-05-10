@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>HomePage</title>
+    <link media="all" rel="stylesheet" th:href="@{/css/header.css}" type="text/css"/>
+    <link media="all" rel="stylesheet" th:href="@{/css/footer.css}" type="text/css"/>
+
 </head>
 <body>
 <header th:insert="~{blocks/header :: header}"></header>
 
 <h1>Gornovova Elizaveta IKBO-20-22 variant 4</h1>
-<form action="/logout" method="get">
+<!--<form action="/logout" method="get">
     <input type="submit" value="Logout">
 </form>
 <form action="/login" method="get">
     <input type="submit" value="Login">
-</form>
+</form>-->
 
 <footer th:insert="~{blocks/footer :: footer}"></footer>
 

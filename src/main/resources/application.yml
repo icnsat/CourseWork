@@ -20,6 +20,8 @@ spring:
          #   enable: true
           #ssl:
            # enable: true
+#  mvc:
+#    static-path-pattern: /static/**
   session:
     store-type: jdbc
 server:

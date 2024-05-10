@@ -95,10 +95,14 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/registration", "/", "/shop").permitAll()
-                        //.requestMatchers("/").permitAll()
+                        .requestMatchers("/registration", "/", "/shop", "/login").permitAll()
+                        .requestMatchers("/css/**", "/js/**", "/images/**").permitAll()
                         .anyRequest().authenticated()
                 )
+//                .authorizeHttpRequests((requests) -> requests
+//                        .requestMatchers("/account", "/shopping-cart", "/logout").hasAuthority("USER")
+//                        .anyRequest().permitAll()
+//                )
                 .formLogin((form) -> form
                         .loginPage("/login")
                         .defaultSuccessUrl("/account")
@@ -109,8 +113,9 @@ public class SecurityConfig {
                         .logoutUrl("/logout")
                         .logoutSuccessUrl("/logout-success")
                         //.logoutRequestMatcher(new AntPathRequestMatcher("/logout", "POST"))
-                        .invalidateHttpSession(true));
-
+                        .invalidateHttpSession(true)
+                        .permitAll()
+                );
         //.permitAll());
 
         return http.build();

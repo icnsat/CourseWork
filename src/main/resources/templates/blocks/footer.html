@@ -1,14 +1,29 @@
 <div th:fragment="footer">
     <div class="footer-container">
-        <a>Главная</a>
-        <a>Абонементы</a>
-        <a>Аккаунт</a>
-        <span>
-            Адреса:
-        </span>
-        <span>
-            Контакты:
-        </span>
+        <div class="footers-hrefs">
+            <div class="hrefs">
+                <a href="/"><p>Главная</p></a>
+                <a href="/shop"><p>Абонементы</p></a>
+                <a href="/account"><p>Аккаунт</p></a>
+                <a href="/shopping-cart"><p>Корзина</p></a>
+            </div>
+            <div class="footers-contacts1">
+                <h3>Адреса:</h3>
+                <ul>
+                    <li>Проспект Вернадского, 78</li>
+                    <li>Стромынка, 20</li>
+                    <li>Малая Пироговская, 1</li>
+                </ul>
+            </div>
+            <div class="footers-contacts2">
+                <h3>Контакты:</h3>
+                <ul>
+                    <li>+7 (499) 600-80-80</li>
+                    <li><a href="https://www.mirea.ru/"><p>https://www.mirea.ru/</p></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-line"></div>
         <div class="copyrightText">
             <p>Горновова Елизавета Ильинична. ИКБО-20-22</p>
         </div>
