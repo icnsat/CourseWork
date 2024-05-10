@@ -16,3 +16,7 @@
 .header-container a:hover {
     color: #a1a2dd; /* фиолетовый цвет для ссылок при наведении курсора */
 }
+
+header{
+    margin-bottom: 10px;
+}

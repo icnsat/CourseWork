@@ -5,11 +5,9 @@
 
     <title>Login</title>
 
-   <!-- <link href="css/header.css" rel="stylesheet" type="text/html" />-->
-
-
     <link media="all" rel="stylesheet" th:href="@{/css/header.css}" type="text/css"/>
     <link media="all" rel="stylesheet" th:href="@{/css/footer.css}" type="text/css"/>
+    <link media="all" rel="stylesheet" th:href="@{/css/login.css}" type="text/css"/>
 
 
 </head>
@@ -17,18 +15,24 @@
 
 <header th:insert="~{blocks/header :: header}"></header>
 
-<div th:if="${param.error}">
-    Invalid username and password.
+<div th:if="${param.error}" class="invalid_un_p">
+    <p>Неправильное имя пользователя или пароль</p>
 </div>
 <div th:if="${param.logout}">
     You have been logged out.
 </div>
-<form th:action="@{/login}" method="post">
-    <div><label> User Name : <input type="text" name="username"/> </label></div>
-    <div><label> Password: <input type="password" name="password"/> </label></div>
-    <div><input type="submit" value="Log In"/></div>
-</form>
-<a href="/registration">Add new user</a>
+
+<div class="login-form">
+    <div>Вход в аккаунт</div>
+
+    <form th:action="@{/login}" method="post">
+        <input type="text" name="username" placeholder="Имя пользователя"/>
+        <input type="password" name="password" placeholder="Пароль"/>
+        <input type="submit" value="Войти"/>
+    </form>
+
+    <div>Ещё нет акканута? <a href="/registration">Регистрация</a></div>
+</div>
 
 <footer th:insert="~{blocks/footer :: footer}"></footer>
 

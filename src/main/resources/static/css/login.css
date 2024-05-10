@@ -1,0 +1,53 @@
+.login-form {
+    width: 300px; /* Ширина формы */
+    margin: 100px auto; /* Выравнивание формы по центру */
+    padding: 20px; /* Внутренние отступы */
+    background-color: #000; /* Цвет фона формы */
+    color: #fff; /* Цвет текста */
+    border-radius: 10px; /* Радиус скругления углов */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень */
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form > form input, .login-form div {
+    margin-bottom: 15px; /* Внешний отступ снизу для элементов формы */
+    align-self: center;
+}
+
+.login-form > form{
+    width: 80%;
+    align-self: center;
+}
+
+.login-form > form input[type="text"],
+.login-form > form input[type="password"],
+.login-form > form input[type="submit"] {
+    width: 100%; /* Ширина полей ввода и кнопки */
+    box-sizing: border-box;
+    padding: 10px; /* Внутренние отступы */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Радиус скругления углов */
+    background-color: #fff; /* Цвет фона полей ввода и кнопки */
+    color: #000; /* Цвет текста */
+    margin-bottom: 5px;
+}
+
+.login-form > form input[type="submit"] {
+    background-color: #a1a2dd; /* Цвет фона кнопки отправки */
+    color: #fff; /* Цвет текста кнопки отправки */
+    cursor: pointer; /* Изменение курсора при наведении */
+    width: 100%;
+}
+
+.login-form > form input[type="submit"]:hover {
+    background-color: #8081d1; /* Цвет фона кнопки отправки при наведении */
+}
+
+.login-form a {
+    color: #a1a2dd;/* Цвет текста ссылки */
+}
+
+.login-form a:hover {
+    color: #8081d1; /* Подчеркивание ссылки при наведении */
+}
