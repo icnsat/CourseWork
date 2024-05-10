@@ -1,0 +1,77 @@
+.catalog {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  flex-wrap: wrap;
+  flex-flow: row;
+  justify-content: space-around;
+}
+
+.product {
+  flex: 0 0 auto; /* Let items grow or shrink as needed */
+  width: 24%;
+  border: solid black;
+}
+
+.product img{
+    width:100%;
+}
+
+.container {
+  width: 100%; /* Ensure full width */
+  overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.caption {
+    padding: 7px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-content: center
+}
+
+.caption h3 {
+    text-align: center;
+}
+
+.clickButtons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.clickButtons .plusMinus, .clickButtons .buyIt {
+    background-color: #a1a2dd; /* Цвет фона кнопки отправки */
+    color: #fff; /* Цвет текста кнопки отправки */
+    cursor: pointer; /* Изменение курсора при наведении */
+    border: none;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.clickButtons .plusMinus{
+    width: 10%;
+}
+
+.clickButtons .buyIt {
+    width: 30%;
+}
+
+.clickButtons input[type="number"] {
+    width: 40%;
+    background-color: #efeffb;
+    border-radius: 10px;
+    border: none;
+    padding: 4px;
+    text-align: center;
+}
+
+.clickButtons .plusMinus:hover, .clickButtons .buyIt:hover {
+    background-color: #8081d1;
+}
+
+/* Optional: Adjustments for responsiveness */
+@media screen and (max-width: 768px) {
+  .product {
+    flex-basis: 50%; /* Two products per row on smaller screens */
+    /*width: 49%;*/
+  }
+}

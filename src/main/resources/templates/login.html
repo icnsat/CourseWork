@@ -15,23 +15,32 @@
 
 <header th:insert="~{blocks/header :: header}"></header>
 
-<div th:if="${param.error}" class="invalid_un_p">
+<!--<div th:if="${param.error}" class="invalid_un_p">
     <p>Неправильное имя пользователя или пароль</p>
 </div>
 <div th:if="${param.logout}">
     You have been logged out.
-</div>
+</div>-->
 
 <div class="login-form">
-    <div>Вход в аккаунт</div>
 
-    <form th:action="@{/login}" method="post">
-        <input type="text" name="username" placeholder="Имя пользователя"/>
-        <input type="password" name="password" placeholder="Пароль"/>
-        <input type="submit" value="Войти"/>
-    </form>
+    <div th:if="${param.error}" class="invalid_un_p">
+        <p>Неправильное имя пользователя или пароль</p>
+    </div>
 
-    <div>Ещё нет акканута? <a href="/registration">Регистрация</a></div>
+    <div class="login-form-form">
+
+        <div>Вход в аккаунт</div>
+
+        <form th:action="@{/login}" method="post">
+            <input type="text" name="username" placeholder="Имя пользователя"/>
+            <input type="password" name="password" placeholder="Пароль"/>
+            <input type="submit" value="Войти"/>
+        </form>
+
+        <div>Ещё нет акканута? <a href="/registration">Регистрация</a></div>
+
+    </div>
 </div>
 
 <footer th:insert="~{blocks/footer :: footer}"></footer>

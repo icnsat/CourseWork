@@ -7,7 +7,7 @@
 
     <link media="all" rel="stylesheet" th:href="@{/css/header.css}" type="text/css"/>
     <link media="all" rel="stylesheet" th:href="@{/css/footer.css}" type="text/css"/>
-    <!--<link href = "/static/css/general.css" rel = "stylesheet">-->
+    <link media="all" rel="stylesheet" th:href="@{/css/shop.css}" type="text/css"/>
 
 </head>
 <body>
@@ -23,12 +23,12 @@
                 <div class="product" th:each="prod : ${products}">
                     <img th:src="@{'images/' + ${prod.getId()} + '.jpg'}" th:id = "'img' + ${prod.getId()}" width="300">
                     <div class="caption">
-                        <p></p>
-                        <p class="ProductName" th:id = "'name' + ${prod.getId()}" th:text = "${prod.getName()}"></p>
-                        <p class="ProductPrice" th:id = "'price' + ${prod.getId()}" th:text="${prod.getPrice() + ' ₽'}"></p>
+                        <h3 class="ProductName" th:id = "'name' + ${prod.getId()}" th:text = "${prod.getName()}"></h3>
                         <div class = "description">
                             <p th:text="${prod.getDescription()}"></p>
                         </div>
+                        <h3 class="ProductPrice" th:id = "'price' + ${prod.getId()}" th:text="${prod.getPrice() + ' ₽'}"></h3>
+
                         <div class = "clickButtons">
                             <button class = "plusMinus" th:attr="onclick=|decrementQuantity('${prod.getId()}')|">-</button>
                             <input type = "number" min = "1" max = "10" value = "1" readonly th:id = "'quantity' + ${prod.getId()}">

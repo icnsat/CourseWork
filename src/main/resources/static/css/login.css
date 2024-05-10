@@ -1,6 +1,11 @@
 .login-form {
     width: 300px; /* Ширина формы */
     margin: 100px auto; /* Выравнивание формы по центру */
+}
+
+.login-form-form {
+    width: 100%; /* Ширина формы */
+    box-sizing: border-box;
     padding: 20px; /* Внутренние отступы */
     background-color: #000; /* Цвет фона формы */
     color: #fff; /* Цвет текста */
@@ -10,19 +15,19 @@
     flex-direction: column;
 }
 
-.login-form > form input, .login-form div {
+.login-form-form > form input, .login-form-form div {
     margin-bottom: 15px; /* Внешний отступ снизу для элементов формы */
     align-self: center;
 }
 
-.login-form > form{
+.login-form-form > form{
     width: 80%;
     align-self: center;
 }
 
-.login-form > form input[type="text"],
-.login-form > form input[type="password"],
-.login-form > form input[type="submit"] {
+.login-form-form > form input[type="text"],
+.login-form-form > form input[type="password"],
+.login-form-form > form input[type="submit"] {
     width: 100%; /* Ширина полей ввода и кнопки */
     box-sizing: border-box;
     padding: 10px; /* Внутренние отступы */
@@ -33,21 +38,34 @@
     margin-bottom: 5px;
 }
 
-.login-form > form input[type="submit"] {
+.login-form-form > form input[type="submit"] {
     background-color: #a1a2dd; /* Цвет фона кнопки отправки */
     color: #fff; /* Цвет текста кнопки отправки */
     cursor: pointer; /* Изменение курсора при наведении */
     width: 100%;
 }
 
-.login-form > form input[type="submit"]:hover {
+.login-form-form > form input[type="submit"]:hover {
     background-color: #8081d1; /* Цвет фона кнопки отправки при наведении */
 }
 
-.login-form a {
+.login-form-form a {
     color: #a1a2dd;/* Цвет текста ссылки */
 }
 
-.login-form a:hover {
+.login-form-form a:hover {
     color: #8081d1; /* Подчеркивание ссылки при наведении */
+}
+
+
+.invalid_un_p {
+    background-color: #ff8a8a;
+    align-self: center;
+    border-radius: 10px; /* Радиус скругления углов */
+    padding: 10px; /* Внутренние отступы */
+    text-align: center;
+    margin-bottom: 5px;
+}
+.invalid_un_p p {
+    color: #fff;
 }
