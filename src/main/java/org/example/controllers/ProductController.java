@@ -52,13 +52,15 @@ public class ProductController {
     }
 
     @GetMapping("/account")
-    public String accountPage(Model model, @AuthenticationPrincipal CustomUserDetails customUserDetails) {
-        //Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+    public String accountPage(Model model,
+                              @AuthenticationPrincipal CustomUserDetails customUserDetails) {
         log.info("account page visited");
+
         Long id = customUserDetails.getUser().getId();
         model.addAttribute("user", userService.findUserById(id));
         model.addAttribute("orders", orderService.findOrdersByUserId(id));
         model.addAttribute("numberOfItems", numberOfItems);
+
         log.info("account page uploaded");
         return "account";
     }
@@ -97,7 +99,6 @@ public class ProductController {
             orderItem.setOrder(order);
             orderItemService.saveOrderItem(orderItem);
         }
-        //orderService.create(order);
         return "redirect:/account";
     }
 

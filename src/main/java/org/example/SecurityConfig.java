@@ -99,25 +99,17 @@ public class SecurityConfig {
                         .requestMatchers("/css/**", "/js/**", "/images/**").permitAll()
                         .anyRequest().authenticated()
                 )
-//                .authorizeHttpRequests((requests) -> requests
-//                        .requestMatchers("/account", "/shopping-cart", "/logout").hasAuthority("USER")
-//                        .anyRequest().permitAll()
-//                )
                 .formLogin((form) -> form
                         .loginPage("/login")
                         .defaultSuccessUrl("/account")
                         .permitAll()
                 )
-                //.logout((logout) -> logout.permitAll());
                 .logout((logout) -> logout
                         .logoutUrl("/logout")
                         .logoutSuccessUrl("/logout-success")
-                        //.logoutRequestMatcher(new AntPathRequestMatcher("/logout", "POST"))
                         .invalidateHttpSession(true)
                         .permitAll()
                 );
-        //.permitAll());
-
         return http.build();
     }
 
