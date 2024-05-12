@@ -1,0 +1,85 @@
+.cartandcontacts {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+
+.simpleOrder {
+    width:100%;
+    margin-bottom: 2em;
+}
+
+
+.orderDescription {
+    display: grid;
+    grid-template-areas: "h2 p1 p2";
+    width: 100%;
+    border-top: solid 4px #000;
+    border-right: solid 2px #000;
+    align-items: center;
+}
+
+.p1 {
+    grid-area: p1;
+}
+
+.p2 {
+    grid-area: p2;
+}
+
+.p3 {
+    grid-area: p3;
+}
+
+.p4 {
+    grid-area: p4;
+}
+
+.p5 {
+    grid-area: p5;
+}
+
+.product {
+    display: grid;
+    grid-template-areas: "img p3 p4 p5";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    /*margin-bottom: 10px;*/
+    text-align: center;
+    border-top: solid 2px #000;
+    border-right: solid 2px #000;
+    grid-area: product;
+    row-gap: 10px;
+}
+
+.product img{
+    width: 100%;
+}
+
+.orderitems {
+    display:grid;
+    grid-template-areas: "product";
+}
+
+.cart {
+    width: 70%;
+}
+
+.contactsMenu {
+    width: 28%;
+    padding: 10px;
+}
+
+.contactsMenu .shineButton {
+    /*width: 40%;*/
+    background-color: #efeffb;
+    border-radius: 10px;
+    border: none;
+    padding: 4px;
+    align-self: center;
+}
+
+.contactsMenu .shineButton:hover {
+    background-color: #8081d1;
+}

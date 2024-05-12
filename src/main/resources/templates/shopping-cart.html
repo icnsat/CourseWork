@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link media="all" rel="stylesheet" th:href="@{/css/header.css}" type="text/css"/>
     <link media="all" rel="stylesheet" th:href="@{/css/footer.css}" type="text/css"/>
+    <link media="all" rel="stylesheet" th:href="@{/css/shopping-cart.css}" type="text/css"/>
 
 </head>
 <body>
@@ -17,18 +18,18 @@
 <main>
     <section class = "cart">
         <div class = "topBar">
-            <div><p>Товар</p></div>
-            <div><p>Количество</p></div>
-            <div><p>Цена за один товар</p></div>
-            <div><p>Общая стоимость</p></div>
+            <div><h3>Товар</h3></div>
+            <div><h3>Количество</h3></div>
+            <div><h3>Цена за один товар</h3></div>
+            <div><h3>Общая стоимость</h3></div>
         </div>
         <div class = "cartGoods">
             <div id="cart-items"></div>
         </div>
     </section>
     <form id = "myContacts" class = "contactsMenu" th:action = "@{/add-order}" th:method="POST" th:object="${order}">
-        <h2>Общая стоимость</h2>
-        <div>
+        <h2>Итого:</h2>
+        <div class="itogo">
             <input id = "text2" th:field="*{totalCost}" readonly>
             <p>₽</p>
         </div>
@@ -38,7 +39,6 @@
             <label><input required type = "radio" name = "payment" th:field="*{paymentChoose}" th:value="наличные">Оплата наличными</label>
         </div>-->
         <div th:each = "product, i: *{orderItems}">
-            <!--<input th:id = "${'cartIndex' + __${i.index}__}" style="display: none;" th:field="*{orderItems[__${i.index}__].order.id}">-->
             <input th:id = "${'productIndex' + __${i.index}__}" style="display: none;" th:field="*{orderItems[__${i.index}__].product.id}">
             <input th:id = "${'cartIndex' + __${i.index}__}" style="display: none;" th:field="*{orderItems[__${i.index}__].order.id}">
             <input th:id = "${'name' + __${i.index}__}" style="display:none;" th:field="*{orderItems[__${i.index}__].product.name}">
@@ -53,7 +53,7 @@
     window.onload = function () {
         fillCartItems();
     };
-</script><!--getNumberOfItems();-->
+</script>
 <footer th:insert="~{blocks/footer :: footer}"></footer>
 </body>
 </html>

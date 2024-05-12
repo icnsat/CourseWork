@@ -57,8 +57,8 @@ function fillCartItems() {
                 <img src="${cart[ind].img}" alt="${cart[ind].name}">
                 <p>${cart[ind].name}</p>
             </div>
-            <p>${cart[ind].quantity}</p>
-            <p>${cart[ind].price} ₽</p>
+            <p class="disc1">${cart[ind].quantity}</p>
+            <p class="disc2">${cart[ind].price} ₽</p>
             <div class = "removeAndPrice">
                 <p>${cart[ind].quantity * cart[ind].price} ₽</p>
                 <button class="remove-btn" onclick="removeItem(${ind})"><i class="fa fa-trash" aria-hidden="true"></i></button>
