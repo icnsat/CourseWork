@@ -1,0 +1,32 @@
+
+main {
+    display: flex;
+    width:100%;
+    flex-flow: row;
+    justify-content: center;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.FlexFit {
+    width: 60%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.clubdisc {
+    margin-bottom:2em;
+}
+
+.images {
+    display: flex;
+    flex-fow: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.images img {
+    width: 30%;
+}

@@ -2,21 +2,29 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>HomePage</title>
+    <title>FlexFit</title>
     <link media="all" rel="stylesheet" th:href="@{/css/header.css}" type="text/css"/>
     <link media="all" rel="stylesheet" th:href="@{/css/footer.css}" type="text/css"/>
+    <link media="all" rel="stylesheet" th:href="@{/css/home.css}" type="text/css"/>
 
 </head>
 <body>
 <header th:insert="~{blocks/header :: header}"></header>
+<main>
+    <div class="FlexFit">
+        <h1>Flex Fit</h1>
 
-<h1>Gornovova Elizaveta IKBO-20-22 variant 4</h1>
-<!--<form action="/logout" method="get">
-    <input type="submit" value="Logout">
-</form>
-<form action="/login" method="get">
-    <input type="submit" value="Login">
-</form>-->
+        <div class="clubdisc">
+            <p>— фитнес-клуб с оплатой за месяц. Это не просто клуб, а сообщество единомышленников, для которых физическая активность —  норма жизни. Кроме привычного фитнеса, мы устраиваем челленджи и соревнования среди сети, проводим открытые тренировки и устраиваем сайкл-забеги в торговых центрах. Всё это объединяет людей, неравнодушных к фитнесу.</p>
+        </div>
+
+        <div class="images">
+            <img src="/images/home1.jpg">
+            <img src="/images/home2.jpg">
+            <img src="/images/home3.jpg">
+        </div>
+    </div>
+</main>
 
 <footer th:insert="~{blocks/footer :: footer}"></footer>
 

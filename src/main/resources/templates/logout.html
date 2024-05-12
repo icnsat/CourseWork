@@ -6,25 +6,15 @@
 
     <link media="all" rel="stylesheet" th:href="@{/css/header.css}" type="text/css"/>
     <link media="all" rel="stylesheet" th:href="@{/css/footer.css}" type="text/css"/>
+    <link media="all" rel="stylesheet" th:href="@{/css/logout.css}" type="text/css"/>
 
 </head>
 <body>
 
 <header th:insert="~{blocks/header :: header}"></header>
-
-logout-ed!
-
-</script>
-<script src = "/js/order-products.js"></script>
-
-<!--<script>
-   window.onload = function () {
-        getNumberOfItems();
-    };
--->
-
-</script>
-
+<div class="logout">
+    <h2>Вы вышли из аккаунта</h2>
+</div>
 <footer th:insert="~{blocks/footer :: footer}"></footer>
 
 </body>
