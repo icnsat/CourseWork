@@ -7,25 +7,25 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    //@Column(name = "id")
     private Long id;
-    @Column(name = "username")
+    //@Column(name = "username")
     private String username;
-    @Column(name = "password")
+    //@Column(name = "password")
     private String password;
-    @Column(name = "email")
+    //@Column(name = "email")
     private String email;
-    @Column(name = "active")
-    private boolean active;
-    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
-    @CollectionTable(name = "userrole", joinColumns = @JoinColumn(name = "user_id"))
-    @Column(name = "role")
-    @Enumerated(EnumType.STRING)
-    private Set<Role> roles;
+    //@Column(name = "active")
+    //private boolean active;
+//    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
+//    @CollectionTable(name = "userrole", joinColumns = @JoinColumn(name = "user_id"))
+//    @Column(name = "role")
+//    @Enumerated(EnumType.STRING)
+//    private Set<Role> roles;
 
     @OneToMany
     private List<Order> orders;
@@ -54,27 +54,27 @@ public class User {
         this.password = password;
     }
 
-    public boolean isActive() {
-        return active;
-    }
+//    public boolean isActive() {
+//        return active;
+//    }
+//
+//    public void setActive(boolean active) {
+//        this.active = active;
+//    }
 
-    public void setActive(boolean active) {
-        this.active = active;
-    }
+//    public Set<Role> getRoles() {
+//        return roles;
+//    }
+//
+//    public void setRoles(Set<Role> roles) {
+//        this.roles = roles;
+//    }
 
-    public Set<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
-    }
-
-    public User(String username, String password, boolean active, Set<Role> roles) {
+    public User(String username, String password/*, boolean active, Set<Role> roles*/) {
         this.username = username;
         this.password = password;
-        this.active = active;
-        this.roles = roles;
+//        this.active = active;
+//        this.roles = roles;
     }
 
     public User() {}

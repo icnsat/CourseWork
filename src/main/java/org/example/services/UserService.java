@@ -36,12 +36,12 @@ public class UserService {
             return "registration";
         }
         log.info("User doesn't exist");
-        if (Objects.equals(user.getUsername(), "admin"))
-            user.setRoles(Collections.singleton(Role.ADMIN));
-        else
-            user.setRoles(Collections.singleton(Role.CLIENT));
-        log.info("Role for new user applied");
-        user.setActive(true);
+//        if (Objects.equals(user.getUsername(), "admin"))
+//            user.setRoles(Collections.singleton(Role.ADMIN));
+//        else
+//            user.setRoles(Collections.singleton(Role.CLIENT));
+        //log.info("Role for new user applied");
+        //user.setActive(true);
         String encodedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
         userRepository.save(user);

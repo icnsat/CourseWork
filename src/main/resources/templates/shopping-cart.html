@@ -40,7 +40,7 @@
         </div>-->
         <div th:each = "product, i: *{orderItems}">
             <input th:id = "${'productIndex' + __${i.index}__}" style="display: none;" th:field="*{orderItems[__${i.index}__].product.id}">
-            <input th:id = "${'cartIndex' + __${i.index}__}" style="display: none;" th:field="*{orderItems[__${i.index}__].order.id}">
+<!--            <input th:id = "${'cartIndex' + __${i.index}__}" style="display: none;" th:field="*{orderItems[__${i.index}__].order.id}">-->
             <input th:id = "${'name' + __${i.index}__}" style="display:none;" th:field="*{orderItems[__${i.index}__].product.name}">
             <input th:id = "${'quantity' + __${i.index}__}" style="display: none;" th:field="*{orderItems[__${i.index}__].quantity}">
             <input th:id = "${'price' + __${i.index}__}" style="display: none;" th:field="*{orderItems[__${i.index}__].product.price}">

@@ -1,4 +1,4 @@
-package org.example.entities;
+/*package org.example.entities;
 
 import jakarta.persistence.*;
 
@@ -52,4 +52,4 @@ public class BucketItem {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-}
+}*/

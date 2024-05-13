@@ -23,13 +23,22 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     implementation 'org.springframework.data:spring-data-jpa'
-    implementation 'com.mysql:mysql-connector-j:8.3.0'
+    //implementation 'com.mysql:mysql-connector-j:8.3.0'
     implementation 'com.zaxxer:HikariCP:5.0.1'
     implementation 'org.hibernate.orm:hibernate-core:6.4.4.Final'
 
+    runtimeOnly 'org.postgresql:postgresql'
 
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'org.example.CourseApp'
+        )
+    }
 }
