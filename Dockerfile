@@ -6,6 +6,5 @@ COPY . /app
 
 EXPOSE 8084
 
-CMD ["java", "-jar", "/app/build/libs/CourseWork-1.0-SNAPSHOT.jar"]
-
+CMD ["java", "-jar", "/app/gradle-build/libs/CourseWork-1.0-SNAPSHOT.jar"]
 
